@@ -19,6 +19,10 @@ $ conda activate mini-rag
 ```
 
 # install requirements using UV
-``bash
+```bash
  uv pip install -r requirements.txt
+```
+# Setup the enviroment varibels 
+```bash
+cp .env.example .env
 ```
