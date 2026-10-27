@@ -18,3 +18,7 @@ $ conda create -n mini-rag python=3.8
 $ conda activate mini-rag
 ```
 
+# install requirements using UV
+``bash
+ uv pip install -r requirements.txt
+```
