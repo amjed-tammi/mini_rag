@@ -17,3 +17,4 @@ $ conda create -n mini-rag python=3.8
 ```bash
 $ conda activate mini-rag
 ```
+
