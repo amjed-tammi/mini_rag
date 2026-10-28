@@ -1,19 +1,21 @@
 
-from fastapi import  APIRouter 
+from fastapi import APIRouter
 
-import os
+from helpers.config import get_settings
 
 base_router = APIRouter(
-    #any routes down you should put prefix befor routes name becaue in future if clint ask to add or put name four routes you can easily add prefix to all routes in this router
-prefix="/api/v1",
-#split tags  on swageer
-tags=["Api/v1"]
+    prefix="/api/v1",
+    tags=["Api/v1"],
 )
 
 
-
 @base_router.get("/")
-async def welcome():
-    app_name=os.getenv("APP_NAME")
-    app_version=os.getenv("APP_VERSION")
-    return {"message": "Welcome to FastAPI! this is splited router from main file", "app_name": app_name, "app_version": app_version}
+def welcome():
+    app_settings = get_settings()
+    app_name = app_settings.APP_NAME
+    app_version = app_settings.APP_VERSION
+    return {
+        "message": "Welcome to FastAPI! this is splited router from main file",
+        "app_name": app_name,
+        "app_version": app_version,
+    }
