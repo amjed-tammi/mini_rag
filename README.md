@@ -26,3 +26,15 @@ $ conda activate mini-rag
 ```bash
 cp .env.example .env
 ```
+
+# How to run server there are 2 way 
+
+## 1- normal way 
+```bash
+.venv soruce/bin/activate --then--> uvicorn main:app --reload --host 0.0.0.0 --port 5000
+```
+## 2- fast way using uv 
+```bash
+uv run uvicorn main:app  --reload --host 0.0.0.0 --port 5000
+```
+ uvicorn main:app --reload --host 0.0.0.0 --port 5000
